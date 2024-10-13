@@ -1,0 +1,15 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Political Strategy Advisor",
+  "name_for_model": "political_strategy_advisor",
+  "description_for_human": "Provides strategic advice to political candidates based on their stance on key issues and voter demographics.",
+  "description_for_model": "Use this plugin to recommend campaign strategies based on candidate positions and voting region.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://raw.githubusercontent.com/FrenchFries42/dubhacks/refs/heads/main/openapi.yaml",
+    "has_user_authentication": false
+  }
+}

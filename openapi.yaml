@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Political Strategy API
+  description: Provides political strategy suggestions based on candidate position and region.
+  version: 1.0.0
+servers:
+  - url:  https://1b07-24-16-204-88.ngrok-free.app
+paths:
+  /political-strategy:
+    post:
+      summary: Get political strategy advice.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                position:
+                  type: string
+                  example: "pro-gun control"
+                region:
+                  type: string
+                  example: "Texas"
+      responses:
+        '200':
+          description: A strategy response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "For Texas, with a pro-gun control stance, focus on urban voters."
+                  suggestion:
+                    type: string
+                    example: "Highlight public safety and healthcare."
