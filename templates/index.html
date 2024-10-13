@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Strategy Advisor</title>
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #2E7D32;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        .message {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        // JavaScript to handle form submission and show a loading message
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = "Generating your campaign strategy...";
+            messageDiv.style.display = 'block';
+
+            // Simulate a slight delay before submitting
+            setTimeout(() => {
+                event.target.submit(); // Proceed with the form submission
+            }, 500);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Political Strategy Advisor</h1>
+        <form action="/" method="POST" onsubmit="handleSubmit(event)">
+            <label for="position">Political Position:</label>
+            <input type="text" id="position" name="position" placeholder="e.g., Pro-Gun Control" required>
+
+            <label for="region">Region (State):</label>
+            <input type="text" id="region" name="region" placeholder="e.g., Texas" required>
+
+            <button type="submit">Generate Speech</button>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+</body>
+</html>
